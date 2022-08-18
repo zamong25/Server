@@ -3,11 +3,20 @@ const app = express();
 const cors = require("cors");
 const { Client } = require("pg");
 // const dbInfo = require("../DB/dbInfo");
-const dbInfo = {};
+// const dbInfo = {};
 app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+const dbInfo = {
+  user: "tkqygflyvyxkef",
+  password: "2503",
+  port: 5432,
+  host: "ec2-54-85-56-210.compute-1.amazonaws.com",
+  database: "d80opl9pts61jv",
+  ssl: { rejectUnauthorized: false },
+};
 
 app.get("/", (req, res) => {
   res.send("Success");
