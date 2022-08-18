@@ -11,10 +11,10 @@ app.use(express.urlencoded({ extended: false }));
 
 const dbInfo = {
   user: "tkqygflyvyxkef",
-  password: "2503",
+  password: "7b56fc209aa48e5fe5922e7a7ba092f3f143ac3c7d5319002eb53cdd83c5d800",
   port: 5432,
   host: "ec2-54-85-56-210.compute-1.amazonaws.com",
-  database: "7b56fc209aa48e5fe5922e7a7ba092f3f143ac3c7d5319002eb53cdd83c5d800",
+  database: "d80opl9pts61jv",
   ssl: { rejectUnauthorized: false },
 };
 
