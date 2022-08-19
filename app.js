@@ -3,7 +3,6 @@ const app = express();
 const cors = require("cors");
 const { Client } = require("pg");
 // const dbInfo = require("../DB/dbInfo");
-// const dbInfo = {};
 app.use(cors());
 
 app.use(express.json());
@@ -82,7 +81,6 @@ app.post("/del", (req, res) => {
 
 app.post("/update", (req, res) => {
   const lan = req.body.lan;
-  console.log("lan", lan);
   const msg = req.body.msg;
   const selectedItem = req.body.selectedItem;
 
@@ -106,7 +104,7 @@ app.get("/language/:lan", (req, res) => {
   const client = new Client(dbInfo);
   client.connect();
   client.query(
-    'SELECT msg FROM public."Language" WHERE language = $1',
+    'SELECT language, msg FROM public."Language" WHERE language = $1',
     [lan],
     (err, result) => {
       res.send(result.rows);
@@ -164,7 +162,7 @@ app.post("/language/", (req, res) => {
     }
   );
 });
-//process의 env의 port를 쓰겠다
+
 app.listen(process.env.PORT || 3000, () => {
   console.log("Start Server On Port 3000");
 });
