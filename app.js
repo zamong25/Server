@@ -9,11 +9,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 const dbInfo = {
-  user: "tkqygflyvyxkef",
-  password: "7b56fc209aa48e5fe5922e7a7ba092f3f143ac3c7d5319002eb53cdd83c5d800",
+  user: "vyooreyzsmppzy",
+  password: "d56ccad697f3f9782cb71c727691d386aeec125c611b3b83ecc357a7e3a6cf8c",
   port: 5432,
-  host: "ec2-54-85-56-210.compute-1.amazonaws.com",
-  database: "d80opl9pts61jv",
+  host: "ec2-52-207-15-147.compute-1.amazonaws.com",
+  database: "d24vq1cjc7o72d",
   ssl: { rejectUnauthorized: false },
 };
 
@@ -44,6 +44,8 @@ app.get("/language_all/", (req, res) => {
 app.post("/reg", (req, res) => {
   const lan = req.body.lan;
   const msg = req.body.msg;
+
+  console.log(lan);
 
   const client = new Client(dbInfo);
   client.connect();
