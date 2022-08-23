@@ -29,9 +29,9 @@ app.get("/eng", (req, res) => {
   res.send("Hello");
 });
 
-// app.get("/jap", (req, res) => {
-//   res.send("おはよう！");
-// });
+app.get("/jap", (req, res) => {
+  res.send("おはよう！");
+});
 
 app.get("/language_all/", (req, res) => {
   const client = new Client(dbInfo);
